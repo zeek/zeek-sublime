@@ -2,7 +2,7 @@
 
 A broscript `.tmLanguage` syntax highlighting definition for [Sublime Text](http://www.sublimetext.com) and [TextMate](http://www.macromates.com). It is inspired by:
 
-- Set Halls highlingning originally written for textmate [bro.tmbundle](https://github.com/sethhall/bro.tmbundle)
+- Set Halls highlighting originally written for textmate [bro.tmbundle](https://github.com/sethhall/bro.tmbundle)
 
 ## Installation and Use
 
