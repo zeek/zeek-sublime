@@ -221,16 +221,8 @@
 					"match": "(\\=)"
 				},
 				{
-					"name": "text.plain.bro",
-					"match": "(\\|)([a-zA-Z_]{1}[0-9a-zA-Z_-]+)(\\|)",
-					"captures": {
-						"1": {
-							"name": "keyword.operator.length.bro"
-						},
-						"3": {
-							"name": "keyword.operator.length.bro"
-						}
-					}
+					"name": "keyword.operator.length.bro",
+					"match": "(?<!\\|)(\\|)(?!\\|)"
 				},
 				{
 					"name": "keyword.operator.dereference.bro",
