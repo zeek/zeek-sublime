@@ -236,7 +236,7 @@
 				// interval
 				{
 					"name": "constant.other.interval.bro",
-					"match": "\\b(([0-9]+)\\s?((sec|min|hr|day)s?))\\b"
+					"match": "\\b((\\s*-?)([0-9]+)\\s?((sec|min|hr|day)s?))\\b"
 				},
 				// float
 				{

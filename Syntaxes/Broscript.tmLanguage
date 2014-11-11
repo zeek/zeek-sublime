@@ -348,7 +348,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(([0-9]+)\s?((sec|min|hr|day)s?))\b</string>
+					<string>\b((\s*-?)([0-9]+)\s?((sec|min|hr|day)s?))\b</string>
 					<key>name</key>
 					<string>constant.other.interval.bro</string>
 				</dict>
