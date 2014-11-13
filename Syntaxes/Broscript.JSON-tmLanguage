@@ -127,7 +127,7 @@
 				},
 				{
 					"name": "meta.preprocessor.bro",
-					"begin": "^\\s*(\\@)(prefixes)\\s+(=|\\+=)\\s+([0-9a-zA-Z_-]+)\\b",
+					"begin": "^\\s*(\\@)(prefixes)\\s+(=|\\+=)\\s+([a-zA-Z_][0-9a-zA-Z_-]+)\\b",
 					"end": "$",
 					"captures": {
 						"1": {
@@ -183,7 +183,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.flow.bro",
-					"match": "\\b(local|add|delete|print|for|next|break|if|else|switch|case|break|fallthrough|when|schedule|return)\\b"
+					"match": "\\b(local|add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\\b"
 				}
 			]
 		},
@@ -191,7 +191,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.import.bro",
-					"match": "^\\s*(module)\\s+([a-zA-Z_]{1}[0-9a-zA-Z_-]*)",
+					"match": "^\\s*(module)\\s+([a-zA-Z_][0-9a-zA-Z_-]*)",
 					"captures": {
 						"2": {
 							"name": "support.variable.namespace.bro"
@@ -349,7 +349,7 @@
 		}, 
 		{
 			"name": "meta.function.bro",
-			"match": "^\\s*(function|hook|event)\\s+(?:([a-zA-Z_]{1}[0-9a-zA-Z_-]*)(::))?([0-9a-zA-Z_-]+)",
+			"match": "^\\s*(function|hook|event)\\s+(?:([a-zA-Z_][0-9a-zA-Z_-]*)(::))?([0-9a-zA-Z_-]+)",
 			"captures": {
 				"1": {
 					"name": "storage.type.function.bro"
@@ -389,7 +389,7 @@
 			"patterns": [
 				{
 					"name": "variable.parameter.bro",
-					"match": "(?<=##\\ )([0-9a-zA-Z_-]+)(?=:)"
+					"match": "(?<=##\\ )([a-zA-Z_][0-9a-zA-Z_-]+)(?=:\\ )"
 				}
 			]
 		},
@@ -424,7 +424,7 @@
 		},
 		{
 			"name": "meta.scope.namespace.bro",
-			"match": "\\b([a-zA-Z_]{1}[0-9a-zA-Z_-]*)(::)",
+			"match": "\\b([a-zA-Z_][0-9a-zA-Z_-]*)(::)",
 			"captures": {
 				"1": {
 					"name": "support.variable.namespace.bro"

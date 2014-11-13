@@ -109,7 +109,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(function|hook|event)\s+(?:([a-zA-Z_]{1}[0-9a-zA-Z_-]*)(::))?([0-9a-zA-Z_-]+)</string>
+			<string>^\s*(function|hook|event)\s+(?:([a-zA-Z_][0-9a-zA-Z_-]*)(::))?([0-9a-zA-Z_-]+)</string>
 			<key>name</key>
 			<string>meta.function.bro</string>
 			<key>patterns</key>
@@ -151,7 +151,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=##\ )([0-9a-zA-Z_-]+)(?=:)</string>
+					<string>(?&lt;=##\ )([a-zA-Z_][0-9a-zA-Z_-]+)(?=:\ )</string>
 					<key>name</key>
 					<string>variable.parameter.bro</string>
 				</dict>
@@ -211,7 +211,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b([a-zA-Z_]{1}[0-9a-zA-Z_-]*)(::)</string>
+			<string>\b([a-zA-Z_][0-9a-zA-Z_-]*)(::)</string>
 			<key>name</key>
 			<string>meta.scope.namespace.bro</string>
 		</dict>
@@ -392,7 +392,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\s*(module)\s+([a-zA-Z_]{1}[0-9a-zA-Z_-]*)</string>
+					<string>^\s*(module)\s+([a-zA-Z_][0-9a-zA-Z_-]*)</string>
 					<key>name</key>
 					<string>keyword.control.import.bro</string>
 				</dict>
@@ -448,7 +448,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^\s*(\@)(prefixes)\s+(=|\+=)\s+([0-9a-zA-Z_-]+)\b</string>
+					<string>^\s*(\@)(prefixes)\s+(=|\+=)\s+([a-zA-Z_][0-9a-zA-Z_-]+)\b</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -589,7 +589,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(local|add|delete|print|for|next|break|if|else|switch|case|break|fallthrough|when|schedule|return)\b</string>
+					<string>\b(local|add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\b</string>
 					<key>name</key>
 					<string>keyword.control.flow.bro</string>
 				</dict>
