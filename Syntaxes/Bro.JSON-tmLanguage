@@ -1,6 +1,6 @@
 // [PackageDev] target_format: plist
 {
-	"name": "Broscript",
+	"name": "Bro",
 	"scopeName": "source.bro",
 	"fileTypes": ["bro"],
 	"repository": {
