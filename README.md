@@ -11,7 +11,7 @@ A broscript `.tmLanguage` syntax highlighting definition for [Sublime Text](http
 Go to `Preferences -> Browse Packages`, and then either download, create a directory called `Bro` and unzip this plugin into that directory, or:
 
 ``` bash
-git clone https://github.com/Traeumer/bro-sublime.git Bro
+git clone https://github.com/bro/bro-sublime.git Bro
 ```
 
 ## Copyright and license
