@@ -1,6 +1,6 @@
 # Bro-Sublime
 
-A broscript `.tmLanguage` syntax highlighting definition for [Sublime Text](http://www.sublimetext.com) and [TextMate](http://www.macromates.com). It is inspired by:
+A Bro `.tmLanguage` syntax highlighting definition for [Sublime Text](http://www.sublimetext.com) and [TextMate](http://www.macromates.com). It is inspired by:
 
 - Seth Halls highlighting originally written for textmate [bro.tmbundle](https://github.com/sethhall/bro.tmbundle)
 

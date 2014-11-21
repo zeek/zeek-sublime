@@ -337,7 +337,7 @@
 		{
 			"name": "string.quoted.regexp.bro", 
 			"begin": "(?<=in|\\=|,|\\()\\s*(/)",
-			"end": "(<!\\\\)/",
+			"end": "(?<!\\\\)/",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.definition.string.begin.bro"
