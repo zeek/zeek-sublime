@@ -619,6 +619,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\\(\\|[/\^\$\{\}\[\]\(\)\.\*\+\?\|\-])</string>
+					<key>name</key>
+					<string>constant.character.escape.bro</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\\.</string>
 					<key>name</key>
 					<string>invalid.illegal.unknown-escape.bro</string>

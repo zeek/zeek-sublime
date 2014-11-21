@@ -20,7 +20,11 @@
 				{
 					"name": "constant.character.escape.bro", 
 					"match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3]\\d{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2})"
-				}, 
+				},
+				{
+					"name": "constant.character.escape.bro",
+					"match": "\\\\(\\\\|[/\\^\\$\\{\\}\\[\\]\\(\\)\\.\\*\\+\\?\\|\\-])"
+				},
 				{
 					"name": "invalid.illegal.unknown-escape.bro", 
 					"match": "\\\\."
@@ -32,7 +36,7 @@
 				{
 					"name": "constant.other.placeholder.bro", 
 					"match": "(?x)%\n\t\t\t\t\t\t(\\d+\\$)?                             # field (argument #)\n\t\t\t\t\t\t[#0\\- +']*                           # flags\n\t\t\t\t\t\t[,;:_]?                              # separator character (AltiVec)\n\t\t\t\t\t\t((-?\\d+)|\\*(-?\\d+\\$)?)?              # minimum field width\n\t\t\t\t\t\t(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?         # precision\n\t\t\t\t\t\t(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier\n\t\t\t\t\t\t[diouxXDOUeEfFgGaACcSspn%]           # conversion type\n\t\t\t\t\t"
-				}, 
+				},
 				{
 					"name": "invalid.illegal.placeholder.bro", 
 					"match": "%"
