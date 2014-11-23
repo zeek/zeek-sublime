@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
 	<array>
 		<string>bro</string>
 	</array>
+	<key>foldingStartMarker</key>
+	<string>\{\s*$</string>
+	<key>foldingStopMarker</key>
+	<string>^\s*\}</string>
 	<key>name</key>
 	<string>Bro</string>
 	<key>patterns</key>
@@ -95,21 +99,21 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.variable.namespace.bro</string>
+					<string>entity.name.function.bro</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>meta.scope.namespace.bro</string>
+					<string>variable.parameter.bro</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.bro</string>
+					<string>storage.type.bro</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(function|hook|event)\s+(?:([a-zA-Z_][0-9a-zA-Z_-]*)(::))?([0-9a-zA-Z_-]+)</string>
+			<string>^\s*(function|hook|event)\s+((?:(?:[a-zA-Z_][0-9a-zA-Z_-]*)(?:::))?[0-9a-zA-Z_]+)\s+\((?:([a-zA-Z0-9_]+), ([a-zA-Z0-9_]+))*\)(?:\s*:\s*([a-zA-Z0-9_]+))</string>
 			<key>name</key>
 			<string>meta.function.bro</string>
 			<key>patterns</key>
@@ -129,31 +133,6 @@
 				<dict>
 					<key>include</key>
 					<string>#constants</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>##</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.bro</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>$</string>
-			<key>name</key>
-			<string>comment.block.documentation.bro</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=##\ )([a-zA-Z_][0-9a-zA-Z_-]+)(?=:\ )</string>
-					<key>name</key>
-					<string>variable.parameter.bro</string>
 				</dict>
 			</array>
 		</dict>
@@ -201,20 +180,6 @@
 			<key>include</key>
 			<string>#operator</string>
 		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>support.variable.namespace.bro</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>\b([a-zA-Z_][0-9a-zA-Z_-]*)(::)</string>
-			<key>name</key>
-			<string>meta.scope.namespace.bro</string>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -223,18 +188,10 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.bro</string>
-						</dict>
-					</dict>
 					<key>match</key>
-					<string>(&amp;)(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|group|error_handler|type_column)</string>
+					<string>&amp;(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|group|error_handler|type_column)</string>
 					<key>name</key>
-					<string>meta.property.bro</string>
+					<string>storage.modifier.bro</string>
 				</dict>
 			</array>
 		</dict>
@@ -276,21 +233,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.variable.namespace.bro</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.section.scope.bro</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
 							<string>support.function.builtin.bro</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?&lt;!\$)\b(Reporter)(::)(error|fatal|info|warning)(?=\()</string>
+					<string>(?&lt;!\$)\b(Reporter::(?:error|fatal|info|warning))(?=\()</string>
 					<key>name</key>
 					<string>meta.function-call.reporter.bif.bro</string>
 				</dict>
@@ -336,9 +283,9 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\[\b(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\]/(12[0-8]|1[0-1][0-9]|[1-2]?[0-9])\b</string>
+					<string>\[\b(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\]/(12[0-8]|1[0-1][0-9]|[1-2]?[0-9]|[0-9][0-9])\b</string>
 					<key>name</key>
-					<string>constant.other.ip6.bro</string>
+					<string>constant.other.subnet6.bro</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -368,7 +315,7 @@
 					<key>match</key>
 					<string>(?&lt;![0-9])(\s*-?)\.\b([0-9]*)\b(?!\.)|(?&lt;!\.)(\s*-?)\b([0-9]+\.[0-9]+)\b(?!\.)</string>
 					<key>name</key>
-					<string>constant.numeric.float.bro</string>
+					<string>constant.numeric.double.bro</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -378,7 +325,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\.|:)(\s*-?)\b([0-9]+)\b(?!\.|:|/|\s(sec|secs|min|mins|day|days))</string>
+					<string>(?&lt;!\.|:)(\s*-?)\b([0-9]+)\b(?!\.|:|/|\s((sec|min|day)s?))</string>
 					<key>name</key>
 					<string>constant.numeric.integer.decimal.bro</string>
 				</dict>
@@ -400,7 +347,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>support.variable.namespace.bro</string>
+							<string>storage.modifier.namespace.bro</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -416,15 +363,9 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(const|type|redef|function|event|hook)\b</string>
+					<string>\b(const|global|local|redef|function|event|hook)\b</string>
 					<key>name</key>
 					<string>storage.modifier.declaration.bro</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(global)\b</string>
-					<key>name</key>
-					<string>storage.modifier.global.bro</string>
 				</dict>
 			</array>
 		</dict>
@@ -434,20 +375,15 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^\s*(\@)(load|load-sigs|unload)\s+(.*)\b</string>
+					<string>^\s*(\@(?:load|load-sigs|unload))\s+(.*)\b</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.directive.bro</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
 							<string>keyword.control.import.bro</string>
 						</dict>
-						<key>3</key>
+						<key>2</key>
 						<dict>
 							<key>name</key>
 							<string>meta.definition.bro</string>
@@ -460,25 +396,20 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^\s*(\@)(prefixes)\s+(=|\+=)\s+([a-zA-Z_][0-9a-zA-Z_-]+)\b</string>
+					<string>^\s*(\@prefixes)\s+(=|\+=)\s+([a-zA-Z_][0-9a-zA-Z_-]+)\b</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.directive.bro</string>
+							<string>keyword.control.def.bro</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.control.def.bro</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
 							<string>keyword.operator.assignment.bro</string>
 						</dict>
-						<key>4</key>
+						<key>3</key>
 						<dict>
 							<key>name</key>
 							<string>text.plain.bro</string>
@@ -535,7 +466,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(bool|int|count|counter|double|time|interval|string|pattern|enum|port|addr|subnet|any|table|set|vector|record|opaque|file|function|event|hook)</string>
+					<string>(bool|int|count|double|time|interval|string|pattern|enum|port|addr|subnet|any|table|set|vector|record|opaque|file|function|event|hook)</string>
 					<key>name</key>
 					<string>invalid.illegal.name.type.bro</string>
 				</dict>
@@ -577,21 +508,9 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(\=)</string>
-					<key>name</key>
-					<string>keyword.operator.assignment.bro</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>(?&lt;!\|)(\|)(?!\|)</string>
 					<key>name</key>
 					<string>keyword.operator.length.bro</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(\??\$)</string>
-					<key>name</key>
-					<string>keyword.operator.dereference.bro</string>
 				</dict>
 			</array>
 		</dict>
@@ -601,7 +520,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(local|add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\b</string>
+					<string>\b(add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\b</string>
 					<key>name</key>
 					<string>keyword.control.flow.bro</string>
 				</dict>

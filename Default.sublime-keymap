@@ -1,0 +1,27 @@
+[
+{
+        "keys": ["enter"],
+        "command": "bro_indent",
+        "context": [
+                {"key": "selector",
+                 "operator": "equal",
+                 "operand": "source.bro"},
+                {"key": "preceding_text",
+                 "operator": "regex_contains",
+                 "operand": "(\\)\\s*$|timeout|function|hook|event)[^;{]*$"}
+        ]
+}
+
+,{
+        "keys": ["enter"],
+        "command": "bro_unindent",
+        "context": [
+                {"key": "selector",
+                 "operator": "equal",
+                 "operand": "source.bro"},
+                {"key": "preceding_text",
+                 "operator": "regex_contains",
+                 "operand": "\\}[;\\s]*$"}
+        ]
+}
+]

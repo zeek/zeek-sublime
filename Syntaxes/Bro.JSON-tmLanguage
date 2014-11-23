@@ -3,12 +3,15 @@
 	"name": "Bro",
 	"scopeName": "source.bro",
 	"fileTypes": ["bro"],
+	"foldingStartMarker": "\\{\\s*$",
+	"foldingStopMarker": "^\\s*\\}",
+
 	"repository": {
 		"illegal_names": {
 			"patterns": [
 				{
 					"name": "invalid.illegal.name.type.bro",
-					"match": "(bool|int|count|counter|double|time|interval|string|pattern|enum|port|addr|subnet|any|table|set|vector|record|opaque|file|function|event|hook)"
+					"match": "(bool|int|count|double|time|interval|string|pattern|enum|port|addr|subnet|any|table|set|vector|record|opaque|file|function|event|hook)"
 				}
 			]
 		},
@@ -65,15 +68,9 @@
 				},
 				{
 					"name": "meta.function-call.reporter.bif.bro",
-					"match": "(?<!\\$)\\b(Reporter)(::)(error|fatal|info|warning)(?=\\()",
+					"match": "(?<!\\$)\\b(Reporter::(?:error|fatal|info|warning))(?=\\()",
 					"captures": {
 						"1": {
-							"name": "support.variable.namespace.bro"
-						},
-						"2": {
-							"name": "punctuation.section.scope.bro"
-						},
-						"3": {
 							"name": "support.function.builtin.bro"
 						}
 					}
@@ -101,13 +98,8 @@
 		"attributes": {
 			"patterns": [
 				{
-					"name": "meta.property.bro",
-					"match": "(&)(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|group|error_handler|type_column)",
-					"captures": {
-						"2": {
-							"name": "storage.modifier.bro"
-						} 
-					}
+					"name": "storage.modifier.bro",
+					"match": "&(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|group|error_handler|type_column)"
 				}
 			]
 		},
@@ -115,35 +107,29 @@
 			"patterns": [
 				{
 					"name": "meta.preprocessor.bro",
-					"begin": "^\\s*(\\@)(load|load-sigs|unload)\\s+(.*)\\b",
+					"begin": "^\\s*(\\@(?:load|load-sigs|unload))\\s+(.*)\\b",
 					"end": "$",
 					"captures": {
 						"1": {
-							"name": "keyword.other.directive.bro"
-						},
-						"2": {
 							"name": "keyword.control.import.bro"
 						},
-						"3": {
+						"2": {
 							"name": "meta.definition.bro"
 						}
 					}
 				},
 				{
 					"name": "meta.preprocessor.bro",
-					"begin": "^\\s*(\\@)(prefixes)\\s+(=|\\+=)\\s+([a-zA-Z_][0-9a-zA-Z_-]+)\\b",
+					"begin": "^\\s*(\\@prefixes)\\s+(=|\\+=)\\s+([a-zA-Z_][0-9a-zA-Z_-]+)\\b",
 					"end": "$",
 					"captures": {
 						"1": {
-							"name": "keyword.other.directive.bro"
-						},
-						"2": {
 							"name": "keyword.control.def.bro"
 						},
-						"3": {
+						"2": {
 							"name": "keyword.operator.assignment.bro"
 						},
-						"4": {
+						"3": {
 							"name": "text.plain.bro"
 						}
 					}
@@ -187,7 +173,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.flow.bro",
-					"match": "\\b(local|add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\\b"
+					"match": "\\b(add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\\b"
 				}
 			]
 		},
@@ -198,7 +184,7 @@
 					"match": "^\\s*(module)\\s+([a-zA-Z_][0-9a-zA-Z_-]*)",
 					"captures": {
 						"2": {
-							"name": "support.variable.namespace.bro"
+							"name": "storage.modifier.namespace.bro"
 						}
 					}
 				},
@@ -208,11 +194,7 @@
 				},
 				{
 					"name": "storage.modifier.declaration.bro",
-					"match": "\\b(const|type|redef|function|event|hook)\\b"
-				},
-				{
-					"name": "storage.modifier.global.bro",
-					"match": "\\b(global)\\b"
+					"match": "\\b(const|global|local|redef|function|event|hook)\\b"
 				}
 			]
 		},
@@ -225,8 +207,8 @@
 				},
 				// subnetv6
 				{
-					"name": "constant.other.ip6.bro",
-					"match": "\\[\\b(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\\]/(12[0-8]|1[0-1][0-9]|[1-2]?[0-9])\\b"
+					"name": "constant.other.subnet6.bro",
+					"match": "\\[\\b(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\\]/(12[0-8]|1[0-1][0-9]|[1-2]?[0-9]|[0-9][0-9])\\b"
 				},
 				// ipv4
 				{
@@ -250,7 +232,7 @@
 				},
 				// float
 				{
-					"name": "constant.numeric.float.bro",
+					"name": "constant.numeric.double.bro",
 					"match": "(?<![0-9])(\\s*-?)\\.\\b([0-9]*)\\b(?!\\.)|(?<!\\.)(\\s*-?)\\b([0-9]+\\.[0-9]+)\\b(?!\\.)"
 				},
 				// hex
@@ -261,7 +243,7 @@
 				// dec
 				{
 					"name": "constant.numeric.integer.decimal.bro",
-					"match": "(?<!\\.|:)(\\s*-?)\\b([0-9]+)\\b(?!\\.|:|/|\\s(sec|secs|min|mins|day|days))"
+					"match": "(?<!\\.|:)(\\s*-?)\\b([0-9]+)\\b(?!\\.|:|/|\\s((sec|min|day)s?))"
 				},
 				// bool
 				{
@@ -292,18 +274,18 @@
 					"name": "keyword.operator.arithmetic.bro",
 					"match": "(\\+|\\-|\\*|/|%)(?!\\+|\\-)"
 				},
-				{
-					"name": "keyword.operator.assignment.bro",
-					"match": "(\\=)"
-				},
+				//{
+				//	"name": "keyword.operator.assignment.bro",
+				//	"match": "(\\=)"
+				//},
 				{
 					"name": "keyword.operator.length.bro",
 					"match": "(?<!\\|)(\\|)(?!\\|)"
-				},
-				{
-					"name": "keyword.operator.dereference.bro",
-					"match": "(\\??\\$)"
-				}
+				}//,
+				//{
+				//	"name": "keyword.operator.dereference.bro",
+				//	"match": "(\\??\\$)"
+				//}
 			]
 		}
 	},
@@ -359,19 +341,19 @@
 		}, 
 		{
 			"name": "meta.function.bro",
-			"match": "^\\s*(function|hook|event)\\s+(?:([a-zA-Z_][0-9a-zA-Z_-]*)(::))?([0-9a-zA-Z_-]+)",
+			"match": "^\\s*(function|hook|event)\\s+((?:(?:[a-zA-Z_][0-9a-zA-Z_-]*)(?:::))?[0-9a-zA-Z_]+)\\s+\\((?:([a-zA-Z0-9_]+), ([a-zA-Z0-9_]+))*\\)(?:\\s*:\\s*([a-zA-Z0-9_]+))",
 			"captures": {
 				"1": {
 					"name": "storage.type.function.bro"
 				},
 				"2": {
-					"name": "support.variable.namespace.bro"
+					"name": "entity.name.function.bro"
 				},
 				"3": {
-					"name": "meta.scope.namespace.bro"
+					"name": "variable.parameter.bro"
 				},
 				"4": {
-					"name": "entity.name.function.bro"
+					"name": "storage.type.bro"
 				}
 			},
 			"patterns": [
@@ -389,20 +371,20 @@
 				}
 			]
 		},
-		{
-			"name": "comment.block.documentation.bro",
-			"begin": "##",
-			"end": "$",
-			"beginCaptures": {
-				"0": { "name": "punctuation.definition.comment.bro" }
-			},
-			"patterns": [
-				{
-					"name": "variable.parameter.bro",
-					"match": "(?<=##\\ )([a-zA-Z_][0-9a-zA-Z_-]+)(?=:\\ )"
-				}
-			]
-		},
+		//{
+		//	"name": "comment.block.documentation.bro",
+		//	"begin": "##",
+		//	"end": "$",
+		//	"beginCaptures": {
+		//		"0": { "name": "punctuation.definition.comment.bro" }
+		//	},
+		//	"patterns": [
+		//		{
+		//			"name": "variable.parameter.bro",
+		//			"match": "(?<=##\\ )([a-zA-Z_][0-9a-zA-Z_-]+)(?=:\\ )"
+		//		}
+		//	]
+		//},
 		{
 			"name": "comment.line.number-sign.bro",
 			"begin": "#",
@@ -431,15 +413,6 @@
 		},
 		{
 			"include": "#operator"
-		},
-		{
-			"name": "meta.scope.namespace.bro",
-			"match": "\\b([a-zA-Z_][0-9a-zA-Z_-]*)(::)",
-			"captures": {
-				"1": {
-					"name": "support.variable.namespace.bro"
-				}
-			}
 		}
 	],
 	"uuid": "d301f32f-e93c-4f8f-9da6-b87926f53d4f"
