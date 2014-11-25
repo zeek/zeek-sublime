@@ -113,7 +113,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(function|hook|event)\s+((?:(?:[a-zA-Z_][0-9a-zA-Z_-]*)(?:::))?[0-9a-zA-Z_]+)\s+\((?:([a-zA-Z0-9_]+), ([a-zA-Z0-9_]+))*\)(?:\s*:\s*([a-zA-Z0-9_]+))</string>
+			<string>^\s*(function|hook|event)\s+((?:(?:[a-zA-Z_][0-9a-zA-Z_]*)(?:::))?[0-9a-zA-Z_]+)\s+\((?:([a-zA-Z0-9_]+), ([a-zA-Z0-9_]+))*\)(?:\s*:\s*([a-zA-Z0-9_]+))</string>
 			<key>name</key>
 			<string>meta.function.bro</string>
 			<key>patterns</key>
@@ -363,7 +363,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(const|global|local|redef|function|event|hook)\b</string>
+					<string>\b(type|const|global|local|redef|function|event|hook)\b</string>
 					<key>name</key>
 					<string>storage.modifier.declaration.bro</string>
 				</dict>
@@ -478,6 +478,12 @@
 			<array>
 				<dict>
 					<key>match</key>
+					<string>\b(of)\b</string>
+					<key>name</key>
+					<string>keyword.operator.bro</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(\!|&amp;&amp;|\|\||\b(in)\b)</string>
 					<key>name</key>
 					<string>keyword.operator.logical.bro</string>
@@ -505,6 +511,12 @@
 					<string>(\+|\-|\*|/|%)(?!\+|\-)</string>
 					<key>name</key>
 					<string>keyword.operator.arithmetic.bro</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\=)</string>
+					<key>name</key>
+					<string>keyword.operator.assignment.bro</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -582,15 +594,27 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(bool|count|int|double|time|interval|string|pattern|port|addr|subnet|time|enum|table|set|vector|record|function|event|hook|file|opaque|any)\b</string>
+					<string>\b(bool|count|int|double|time|interval|string|pattern|port|addr|subnet|time|enum|record|function|event|hook|file|opaque|any)\b</string>
 					<key>name</key>
 					<string>storage.type.bro</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(of)\b</string>
+					<string>\bset\s*\[\s*[a-zA-Z_][0-9a-zA-Z_-]+\s*\]</string>
 					<key>name</key>
-					<string>keyword.operator.bro</string>
+					<string>storage.type.bro</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(table|set)\s*\[\s*[a-zA-Z_][0-9a-zA-Z_-]+\s*\]\s+of\s+</string>
+					<key>name</key>
+					<string>storage.type.bro</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\bvector\s*of\s*[a-zA-Z_][0-9a-zA-Z_-]+\s*</string>
+					<key>name</key>
+					<string>storage.type.bro</string>
 				</dict>
 			</array>
 		</dict>

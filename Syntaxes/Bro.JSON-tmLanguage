@@ -161,11 +161,19 @@
 			"patterns": [
 				{
 					"name": "storage.type.bro",
-					"match": "\\b(bool|count|int|double|time|interval|string|pattern|port|addr|subnet|time|enum|table|set|vector|record|function|event|hook|file|opaque|any)\\b"
+					"match": "\\b(bool|count|int|double|time|interval|string|pattern|port|addr|subnet|time|enum|record|function|event|hook|file|opaque|any)\\b"
 				},
 				{
-					"name": "keyword.operator.bro",
-					"match": "\\b(of)\\b"
+					"name": "storage.type.bro",
+					"match": "\\bset\\s*\\[\\s*[a-zA-Z_][0-9a-zA-Z_-]+\\s*\\]"
+				},
+				{
+					"name": "storage.type.bro",
+					"match": "\\b(table|set)\\s*\\[\\s*[a-zA-Z_][0-9a-zA-Z_-]+\\s*\\]\\s+of\\s+"
+				},
+				{
+					"name": "storage.type.bro",
+					"match": "\\bvector\\s*of\\s*[a-zA-Z_][0-9a-zA-Z_-]+\\s*"
 				}
 			]
 		},
@@ -194,7 +202,7 @@
 				},
 				{
 					"name": "storage.modifier.declaration.bro",
-					"match": "\\b(const|global|local|redef|function|event|hook)\\b"
+					"match": "\\b(type|const|global|local|redef|function|event|hook)\\b"
 				}
 			]
 		},
@@ -255,6 +263,10 @@
 		"operator": {
 			"patterns": [
 				{
+					"name": "keyword.operator.bro",
+					"match": "\\b(of)\\b"
+				},
+				{
 					"name": "keyword.operator.logical.bro",
 					"match": "(\\!|&&|\\|\\||\\b(in)\\b)"
 				},
@@ -274,10 +286,10 @@
 					"name": "keyword.operator.arithmetic.bro",
 					"match": "(\\+|\\-|\\*|/|%)(?!\\+|\\-)"
 				},
-				//{
-				//	"name": "keyword.operator.assignment.bro",
-				//	"match": "(\\=)"
-				//},
+				{
+					"name": "keyword.operator.assignment.bro",
+					"match": "(\\=)"
+				},
 				{
 					"name": "keyword.operator.length.bro",
 					"match": "(?<!\\|)(\\|)(?!\\|)"
@@ -341,7 +353,7 @@
 		}, 
 		{
 			"name": "meta.function.bro",
-			"match": "^\\s*(function|hook|event)\\s+((?:(?:[a-zA-Z_][0-9a-zA-Z_-]*)(?:::))?[0-9a-zA-Z_]+)\\s+\\((?:([a-zA-Z0-9_]+), ([a-zA-Z0-9_]+))*\\)(?:\\s*:\\s*([a-zA-Z0-9_]+))",
+			"match": "^\\s*(function|hook|event)\\s+((?:(?:[a-zA-Z_][0-9a-zA-Z_]*)(?:::))?[0-9a-zA-Z_]+)\\s+\\((?:([a-zA-Z0-9_]+), ([a-zA-Z0-9_]+))*\\)(?:\\s*:\\s*([a-zA-Z0-9_]+))",
 			"captures": {
 				"1": {
 					"name": "storage.type.function.bro"
