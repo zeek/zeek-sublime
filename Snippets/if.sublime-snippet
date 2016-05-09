@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+if ( ${1:conditions} )
+	{
+	${2:}
+	}
+
+]]></content>
+	<tabTrigger>if</tabTrigger>
+	<scope>source.bro</scope>
+</snippet>
+
