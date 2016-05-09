@@ -10,7 +10,7 @@ def insert_newline_and_indent(edit, view):
 	for i in range(total):
 		idx = view.sel()[i].begin()
 		line = view.substr(view.line(view.sel()[i]))
-		print line
+#		print line
 		indent = current_indent(line)
 		indents = "\t" * (indent == 0 and 0 or indent+1)
 		view.insert(edit, idx,
