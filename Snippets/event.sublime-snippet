@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+event ${1:bro_init}(${2:arguments})
+	{
+	${3:}
+	}
+]]></content>
+	<tabTrigger>ev</tabTrigger>
+	<scope>source.bro</scope>
+</snippet>
+
