@@ -532,7 +532,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\b</string>
+					<string>\b(add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|timeout|schedule|return)\b</string>
 					<key>name</key>
 					<string>keyword.control.flow.bro</string>
 				</dict>
@@ -612,7 +612,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\bvector\s*of\s*[a-zA-Z_][0-9a-zA-Z_-]+\s*</string>
+					<string>\b(opaque|vector)\s*of\s*[a-zA-Z_][0-9a-zA-Z_-]+\s*</string>
 					<key>name</key>
 					<string>storage.type.bro</string>
 				</dict>

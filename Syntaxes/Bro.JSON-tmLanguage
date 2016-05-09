@@ -173,7 +173,7 @@
 				},
 				{
 					"name": "storage.type.bro",
-					"match": "\\bvector\\s*of\\s*[a-zA-Z_][0-9a-zA-Z_-]+\\s*"
+					"match": "\\b(opaque|vector)\\s*of\\s*[a-zA-Z_][0-9a-zA-Z_-]+\\s*"
 				}
 			]
 		},
@@ -181,7 +181,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.flow.bro",
-					"match": "\\b(add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\\b"
+					"match": "\\b(add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|timeout|schedule|return)\\b"
 				}
 			]
 		},
