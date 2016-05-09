@@ -8,7 +8,7 @@
                  "operand": "source.bro"},
                 {"key": "preceding_text",
                  "operator": "regex_contains",
-                 "operand": "(\\)\\s*$|timeout|function|hook|event)[^;{]*$"}
+                 "operand": "(\\)\\s*$|else|timeout|function|hook|event)[^;{]*$"}
         ]
 }
 
