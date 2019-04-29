@@ -103,10 +103,16 @@ contexts:
       captures:
         1: keyword.other.zeek
 
-    - match: '(@\S+)'
+    - match: '(@(DEBUG|DIR|FILENAME|deprecated|if|ifdef|ifndef|else|endif))'
       scope: meta.preprocessor.zeek
       captures:
         1: keyword.other.zeek
+
+    - match: '(@prefixes)\s*(\+?=).*$'
+      scope: meta.preprocessor.zeek
+      captures:
+        1: keyword.other.zeek
+        2: keyword.operator.zeek
 
     - match: \&\b(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated)\b
       scope: storage.modifier.attribute.zeek
