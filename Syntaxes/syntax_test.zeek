@@ -173,9 +173,11 @@ event zeek_init()
     #                                  ^ keyword.operator
     #                              ^ keyword.operator
 
-    if ( s !in myset )
-       #   ^^^ keyword.operator
-       print "wtf?";
+    if ( ms !in myset )
+       #    ^^^ keyword.operator
+       print fmt("%s, %4.2f: %s", "msg", 3.14, "wtf?");
+       #                     ^^ constant.other.placeholder
+       #              ^^^^^ constant.other.placeholder
     }
 
   switch ( c ) {
