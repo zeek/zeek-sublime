@@ -185,7 +185,7 @@ contexts:
     - match: \b(global|local|const|option)\b
       scope: storage.modifier.zeek
     - match: '\b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()'
-      scope: meta.function-call.zeek entity.name.function.call.zeek
+      scope: entity.name.function.call.zeek
     - match: '\{'
       scope: punctuation.section.block.begin.zeek
     - match: '\}'

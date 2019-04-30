@@ -604,7 +604,7 @@
 			<key>match</key>
 			<string>\b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()</string>
 			<key>name</key>
-			<string>meta.function-call.zeek entity.name.function.call.zeek</string>
+			<string>entity.name.function.call.zeek</string>
 		</dict>
 		<dict>
 			<key>match</key>

@@ -240,7 +240,7 @@ patterns:
   name: storage.modifier.zeek
 
 - match: \b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()
-  name: meta.function-call.zeek entity.name.function.call.zeek
+  name: entity.name.function.call.zeek
 
 - match: \{
   name: punctuation.section.block.begin.zeek
