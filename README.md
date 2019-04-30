@@ -1,4 +1,4 @@
-# zeek-sbulime
+# zeek-sublime
 
 Zeek syntax highlighting definitions for
 [Sublime Text](https://www.sublimetext.com) and
