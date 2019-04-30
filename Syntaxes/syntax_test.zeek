@@ -133,9 +133,9 @@ event zeek_init()
   {
   local b = T;
   # <- storage.modifier
-  local s = "\xff\xaf";
+  local s = "\xff\xaf\"andmore";
   #          ^^ constant.character.escape
-  local p = /foo|bar\xbe/;
+  local p = /foo|bar\xbe\/andmore/;
   #                     ^ punctuation.definition.string.end
   #                 ^^ constant.character.escape
   #         ^^^^^^^^^^^^^ string.regexp
