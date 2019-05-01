@@ -134,11 +134,14 @@ event zeek_init()
   local b = T;
   # <- storage.modifier
   local s = "\xff\xaf\"andmore";
+  #                           ^ punctuation.definition.string.end
+  #                  ^^ constant.character.escape
   #          ^^ constant.character.escape
   local p = /foo|bar\xbe\/andmore/;
-  #                     ^ punctuation.definition.string.end
+  #                              ^ punctuation.definition.string.end
+  #                     ^^ constant.character.escape
   #                 ^^ constant.character.escape
-  #         ^^^^^^^^^^^^^ string.regexp
+  #         ^^^^^^^^^^^^^^^^^^^^^^ string.regexp
   #         ^ punctuation.definition.string.begin
   local c = 10;
   #         ^ constant.numeric.integer.decimal
