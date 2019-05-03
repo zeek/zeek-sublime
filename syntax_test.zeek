@@ -4,7 +4,7 @@
 #                                                                 ^ comment.line
 # <- comment.line punctuation.definition.comment
 
-##! A Zeexygen-style summmary comment.
+##! A Zeekygen-style summmary comment.
 #                                    ^ comment.line
 #^^ punctuation.definition.comment
 # <- comment.line punctuation.definition.comment
@@ -38,11 +38,11 @@ export {
   #     ^ storage.type.enum
   # <- keyword.other
 
-    ## A Zeexygen-style comment.
+    ## A Zeekygen-style comment.
   # ^^ comment.line punctuation.definition.comment
     FOUR,
     #   ^ punctuation.separator
-    FIVE, ##< A Zeexygen-style comment.
+    FIVE, ##< A Zeekygen-style comment.
         # ^^^ comment.line punctuation.definition.comment
   };
 
