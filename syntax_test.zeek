@@ -236,8 +236,9 @@ event zeek_init()
   print 2 ^ 5;
   #       ^ keyword.operator
 
-  myfunction("hello function");
+  myfunction ("hello function");
   # <- entity.name.function.call
+  #          ^ punctuation.section.parens.begin
   hook myhook("hell hook");
   #    ^ entity.name.function.hook
   # <- storage.type

@@ -500,7 +500,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(event)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()</string>
+			<string>\b(event)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -517,7 +517,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(hook)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()</string>
+			<string>\b(hook)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -534,7 +534,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(function)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()</string>
+			<string>\b(function)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -602,7 +602,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()</string>
+			<string>\b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()</string>
 			<key>name</key>
 			<string>entity.name.function.call.zeek</string>
 		</dict>

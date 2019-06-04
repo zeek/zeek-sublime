@@ -197,17 +197,17 @@ patterns:
     '2': {name: storage.type.enum.zeek keyword.declaration.enum.zeek}
     '3': {name: entity.name.enum.zeek}
 
-- match: \b(event)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()
+- match: \b(event)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()
   captures:
     '1': {name: storage.type.zeek}
     '2': {name: entity.name.function.event.zeek}
 
-- match: \b(hook)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()
+- match: \b(hook)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()
   captures:
     '1': {name: storage.type.zeek}
     '2': {name: entity.name.function.hook.zeek}
 
-- match: \b(function)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()
+- match: \b(function)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()
   captures:
     '1': {name: storage.type.zeek}
     '2': {name: entity.name.function.zeek}
@@ -239,7 +239,7 @@ patterns:
 - match: \b(global|local|const|option)\b
   name: storage.modifier.zeek
 
-- match: \b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()
+- match: \b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()
   name: entity.name.function.call.zeek
 
 - match: \{
@@ -260,7 +260,7 @@ patterns:
 # IDPART:      [A-Za-z_][A-Za-z_0-9]*
 # ID:          {{IDPART}}(?:::{{IDPART}})*
 # ID:          (?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*
-# FUNC_LAHEAD: (?=s*\()
+# FUNC_LAHEAD: (?=\s*\()
 # FLOAT:       (?:(\d*\.\d*)([eE][+-]?\d+)?)|(?:(\d*)([eE][+-]?\d+))|(?:(\d*\.\d*))
 # HOSTPART:    [A-Za-z0-9][A-Za-z0-9\-]*
 # HOSTNAME:    {{HOSTPART}}(?:\.{{HOSTPART}})+

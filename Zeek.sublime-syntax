@@ -153,15 +153,15 @@ contexts:
         1: keyword.other.zeek
         2: storage.type.enum.zeek keyword.declaration.enum.zeek
         3: entity.name.enum.zeek
-    - match: '\b(event)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()'
+    - match: '\b(event)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()'
       captures:
         1: storage.type.zeek
         2: entity.name.function.event.zeek
-    - match: '\b(hook)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()'
+    - match: '\b(hook)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()'
       captures:
         1: storage.type.zeek
         2: entity.name.function.hook.zeek
-    - match: '\b(function)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()'
+    - match: '\b(function)\s+((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()'
       captures:
         1: storage.type.zeek
         2: entity.name.function.zeek
@@ -184,7 +184,7 @@ contexts:
       scope: storage.type.zeek
     - match: \b(global|local|const|option)\b
       scope: storage.modifier.zeek
-    - match: '\b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=s*\()'
+    - match: '\b((?:[A-Za-z_][A-Za-z_0-9]*)(?:::(?:[A-Za-z_][A-Za-z_0-9]*))*)(?=\s*\()'
       scope: entity.name.function.call.zeek
     - match: '\{'
       scope: punctuation.section.block.begin.zeek
