@@ -19,3 +19,15 @@ contents to a directory named `Zeek` or use this command:
 ``` bash
 git clone https://github.com/zeek/zeek-sublime Zeek
 ```
+
+## Updating the Syntax Files
+
+The `Zeek.YAML-tmLanguage` file is the one to edit.  The others are
+generated from it with help from the `PackageDev` package, which you
+must first install.  For example:
+
+* With `Zeek.YAML-tmLanguage` open in SublimeText run command:
+  `PackageDev: Convert (YAML, JSON, PList) to...`
+
+* With `Zeek.tmLanguage` open in SublimeText run command:
+  `Plugin Development: Convert Syntax to .sublime-syntax`
