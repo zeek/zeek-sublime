@@ -148,7 +148,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\&amp;\b(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated)\b</string>
+			<string>\&amp;\b(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type)\b</string>
 			<key>name</key>
 			<string>storage.modifier.attribute.zeek</string>
 		</dict>
@@ -339,7 +339,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(add|delete)\b</string>
+			<string>\b(add|delete|copy)\b</string>
 			<key>name</key>
 			<string>keyword.other.zeek</string>
 		</dict>
