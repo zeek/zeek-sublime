@@ -52,7 +52,7 @@ contexts:
       captures:
         1: keyword.other.zeek
         2: keyword.operator.zeek
-    - match: \&\b(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type|is_assigned)\b
+    - match: \&\b(redef|priority|log|optional|default|add_func|delete_func|expire_func|read_expire|write_expire|create_expire|synchronized|persistent|rotate_interval|rotate_size|encrypt|raw_output|mergeable|error_handler|type_column|deprecated|on_change|backend|broker_store|broker_allow_complex_type|is_assigned|is_used)\b
       scope: storage.modifier.attribute.zeek
     - match: \b(T|F)\b
       scope: constant.language.zeek
