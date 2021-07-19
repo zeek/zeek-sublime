@@ -1,5 +1,7 @@
 # zeek-sublime
 
+[![Syntax Tests](https://github.com/zeek/zeek-sublime/actions/workflows/test.yml/badge.svg)](https://github.com/zeek/zeek-sublime/actions/workflows/test.yml)
+
 Zeek syntax highlighting definitions for
 [Sublime Text](https://www.sublimetext.com) and
 [TextMate](https://macromates.com).
@@ -32,5 +34,5 @@ must first install.  For example:
 * With `Zeek.tmLanguage` open in SublimeText run command:
   `Plugin Development: Convert Syntax to .sublime-syntax`
 
-You can add syntax test cases to `syntax_test.zeek` and, with that file open,
+You can add syntax test cases to `syntax_test_.zeek` and, with that file open,
 execute them by running the command: `Build With: Syntax Tests`
