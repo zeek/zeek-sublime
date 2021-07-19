@@ -1,5 +1,7 @@
 # zeek-sublime
 
+[![Syntax Tests](https://github.com/zeek/zeek-sublime/actions/workflows/test.yml/badge.svg)](https://github.com/zeek/zeek-sublime/actions/workflows/test.yml)
+
 Zeek syntax highlighting definitions for
 [Sublime Text](https://www.sublimetext.com) and
 [TextMate](https://macromates.com).
