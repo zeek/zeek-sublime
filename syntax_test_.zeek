@@ -336,4 +336,9 @@ event zeek_init()
   #                             ^^^^^^^^ constant.numeric.float.decimal.interval
   print 1usec, 1usecs, 1.0usec, 1.0usecs;
   #                             ^^^^^^^^ constant.numeric.float.decimal.interval
+
+  local a: vector of subnet;
+  #                  ^ storage.type.zeek
+  #               ^ keyword.operator.zeek
+  #        ^ storage.type.zeek
   }
