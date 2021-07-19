@@ -32,5 +32,5 @@ must first install.  For example:
 * With `Zeek.tmLanguage` open in SublimeText run command:
   `Plugin Development: Convert Syntax to .sublime-syntax`
 
-You can add syntax test cases to `syntax_test.zeek` and, with that file open,
+You can add syntax test cases to `syntax_test_.zeek` and, with that file open,
 execute them by running the command: `Build With: Syntax Tests`
