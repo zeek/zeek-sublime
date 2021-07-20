@@ -341,4 +341,10 @@ event zeek_init()
   #                  ^ storage.type.zeek
   #               ^ keyword.operator.zeek
   #        ^ storage.type.zeek
+
+  a = vector(172.16.0.0/20, 172.16.16.0/20);
+  #                     ^ constant.numeric.integer.decimal
+  #                    ^ keyword.operator
+  #          ^ constant.numeric.addr
+  #   ^ storage.type.zeek
   }
